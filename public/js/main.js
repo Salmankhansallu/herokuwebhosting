@@ -36,7 +36,8 @@ if(cityval==""){
 else{
     try{
         let url=`https://api.openweathermap.org/data/2.5/weather?q=${cityval}&units=metric&appid=14800f95395d5bcd93afb4d8f4e05acd`
-        const response=await fetch(url);
+    //    let url=`api.openweathermap.org/data/2.5/weather?q=pune&appid={API key}`
+       const response=await fetch(url);
         const data= await response.json();
         const arrdata=[data];
         city_name.innerText=`${arrdata[0].name} , ${arrdata[0].sys.country}`;
@@ -56,7 +57,7 @@ else{
             temp_status.innerHTML='<i class="fas fa-cloud-rain" style="color: #a4b0be;"></i>';
         }
         else{
-            temp_status.innerHTML='<i class="fas fa-sun" style="color: #eccc68;"></i>';
+            temp_status.innerHTML='<i class="fas fa-cloud" style="color: #f1f2f6;"></i>';
         }
         datahide.classList.remove('date-hide');
 
